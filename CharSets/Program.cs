@@ -37,6 +37,6 @@ namespace CharSets
             {
                 Console.WriteLine(c);
             }
-        }
+        }        
     }
 }
