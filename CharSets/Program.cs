@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace CharSets
 {
@@ -6,7 +7,13 @@ namespace CharSets
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP1!");
+            foreach (string filePath in args)
+            {
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+
+                }
+            }
         }
     }
 }
