@@ -9,7 +9,7 @@ namespace CharSets
     {
         private static void Main(string[] args)
         {
-
+            bool canPrint = true;
             HashSet<char> caracteres = new HashSet<char>();
 
             foreach (string nomeFicheiro in args)
@@ -23,6 +23,8 @@ namespace CharSets
                         if (linha.Length != 1)
                         {
                             Console.Error.WriteLine("Erro");
+                            canPrint = false;
+                            break;
                         }
 
                         caracteres.Add(linha[0]);
@@ -30,13 +32,17 @@ namespace CharSets
                 }
             }
 
-            List<char> ordenados = caracteres.ToList();
-            ordenados.Sort();
-
-            foreach (char c in ordenados)
+            if (canPrint)
             {
-                Console.WriteLine(c);
+                List<char> ordenados = caracteres.ToList();
+                ordenados.Sort();
+
+                foreach (char c in ordenados)
+                {
+                    Console.WriteLine(c);
+                }
             }
-        }        
+
+        }
     }
 }
